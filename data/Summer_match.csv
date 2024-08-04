@@ -1,0 +1,71 @@
+Team A,Team B,Score A,Score B
+Nongshim RedForce,Kwangdong Freecs,,
+KT Rolster,OK BRION,,
+FearX,DRX,,
+T1,Gen.G eSports,,
+Dplus KIA,Kwangdong Freecs,1.0,1.0
+Nongshim RedForce,Hanwha Life eSports,0.0,2.0
+FearX,Gen.G eSports,0.0,2.0
+DRX,OK BRION,2.0,0.0
+KT Rolster,Hanwha Life eSports,2.0,1.0
+T1,Dplus KIA,2.0,1.0
+KT Rolster,Nongshim RedForce,2.0,1.0
+DRX,T1,0.0,2.0
+Gen.G eSports,Kwangdong Freecs,2.0,0.0
+Hanwha Life eSports,Dplus KIA,2.0,1.0
+KT Rolster,T1,1.0,2.0
+FearX,OK BRION,2.0,0.0
+Dplus KIA,DRX,2.0,0.0
+Hanwha Life eSports,Kwangdong Freecs,2.0,0.0
+OK BRION,Gen.G eSports,0.0,2.0
+FearX,Nongshim RedForce,2.0,0.0
+DRX,Nongshim RedForce,0.0,2.0
+KT Rolster,FearX,1.0,2.0
+Gen.G eSports,Dplus KIA,2.0,1.0
+T1,Hanwha Life eSports,0.0,2.0
+Kwangdong Freecs,OK BRION,1.0,2.0
+KT Rolster,DRX,2.0,0.0
+Gen.G eSports,Nongshim RedForce,2.0,0.0
+FearX,T1,2.0,1.0
+Hanwha Life eSports,Kwangdong Freecs,2.0,0.0
+Dplus KIA,OK BRION,2.0,0.0
+FearX,Hanwha Life eSports,0.0,2.0
+DRX,Kwangdong Freecs,0.0,2.0
+OK BRION,Nongshim RedForce,0.0,2.0
+Dplus KIA,Gen.G eSports,0.0,2.0
+Hanwha Life eSports,T1,2.0,1.0
+FearX,KT Rolster,0.0,2.0
+Gen.G eSports,Kwangdong Freecs,2.0,0.0
+DRX,Dplus KIA,0.0,2.0
+Nongshim RedForce,KT Rolster,0.0,2.0
+T1,OK BRION,2.0,1.0
+Dplus KIA,Kwangdong Freecs,2.0,1.0
+OK BRION,FearX,0.0,2.0
+Hanwha Life eSports,Nongshim RedForce,2.0,0.0
+T1,KT Rolster,1.0,2.0
+Gen.G eSports,DRX,2.0,0.0
+FearX,Kwangdong Freecs,0.0,2.0
+KT Rolster,OK BRION,2.0,1.0
+Nongshim RedForce,Dplus KIA,0.0,2.0
+Gen.G eSports,Hanwha Life eSports,2.0,0.0
+T1,DRX,2.0,0.0
+Hanwha Life eSports,KT Rolster,2.0,0.0
+Gen.G eSports,OK BRION,2.0,0.0
+FearX,Dplus KIA,0.0,2.0
+Nongshim RedForce,DRX,2.0,1.0
+T1,Kwangdong Freecs,2.0,1.0
+OK BRION,Hanwha Life eSports,0.0,2.0
+DRX,FearX,2.0,0.0
+KT Rolster,Gen.G eSports,0.0,2.0
+Dplus KIA,T1,0.0,2.0
+Nongshim RedForce,Kwangdong Freecs,0.0,2.0
+Gen.G eSports,T1,2.0,0.0
+DRX,Hanwha Life eSports,1.0,2.0
+KT Rolster,Dplus KIA,1.0,2.0
+OK BRION,Kwangdong Freecs,1.0,2.0
+T1,Nongshim RedForce,2.0,0.0
+Gen.G eSports,FearX,2.0,0.0
+OK BRION,DRX,1.0,2.0
+KT Rolster,Kwangdong Freecs,0.0,2.0
+Nongshim RedForce,FearX,1.0,2.0
+Dplus KIA,Hanwha Life eSports,2.0,1.0
