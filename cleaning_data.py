@@ -154,7 +154,4 @@ Summer_Kwangdong_Freecs= scrape4("https://gol.gg/teams/team-stats/2117/split-ALL
 Summer_Nongshim_RedForce = scrape4("https://gol.gg/teams/team-stats/2125/split-ALL/tournament-LCK%20Summer%202024/")
 Summer_OK_BRION = scrape4("https://gol.gg/teams/team-stats/2120/split-ALL/tournament-LCK%20Summer%202024/")
 
-#e = scrape4("https://gol.gg/players/player-stats/1328/season-ALL/split-ALL/tournament-LCK%20Summer%202024/")
-#print(e)
-print(Summer_T1)
 """
