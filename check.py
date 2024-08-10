@@ -64,12 +64,24 @@ def extract_champions_and_elements(url):
 
     return df
 
-# Example usage
-url1 = "https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/"
+urls = {
+    'T1': "https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/",
+    'Dplus_KIA': "https://gol.gg/teams/team-stats/2118/split-ALL/tournament-LCK%20Summer%202024/",
+    'DRX': "https://gol.gg/teams/team-stats/2119/split-ALL/tournament-LCK%20Summer%202024/",
+    'FearX': "https://gol.gg/teams/team-stats/2124/split-ALL/tournament-LCK%20Summer%202024/",
+    'Gen_G_eSports': "https://gol.gg/teams/team-stats/2145/split-ALL/tournament-LCK%20Summer%202024/",
+    'Hanwha_Life_eSports': "https://gol.gg/teams/team-stats/2122/split-ALL/tournament-LCK%20Summer%202024/",
+    'KT_Rolster': "https://gol.gg/teams/team-stats/2123/split-ALL/tournament-LCK%20Summer%202024/",
+    'Kwangdong_Freecs': "https://gol.gg/teams/team-stats/2117/split-ALL/tournament-LCK%20Summer%202024/",
+    'Nongshim_RedForce': "https://gol.gg/teams/team-stats/2125/split-ALL/tournament-LCK%20Summer%202024/",
+    'OK_BRION': "https://gol.gg/teams/team-stats/2120/split-ALL/tournament-LCK%20Summer%202024/"
+}
 
-
-data = extract_champions_and_elements(url1)
-print(data)
-
-
+for team_name, url in urls.items():
+    
+    dataframe = extract_champions_and_elements(url)
+    
+    filename = f"Summer_{team_name}.csv"
+    save_dataframe_to_csv(dataframe, filename)
+    print(f"Saved {team_name} data to {filename}")
 
