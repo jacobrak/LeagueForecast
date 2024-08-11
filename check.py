@@ -8,7 +8,8 @@ import re
 import os
 import pandas as pd
 from cleaning_data import save_dataframe_to_csv
-def extract_champions_and_elements(url):
+
+def extract_champions_and_elements(url:str) -> pd.DataFrame:
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--log-level=3")
@@ -76,6 +77,7 @@ urls = {
     'Nongshim_RedForce': "https://gol.gg/teams/team-stats/2125/split-ALL/tournament-LCK%20Summer%202024/",
     'OK_BRION': "https://gol.gg/teams/team-stats/2120/split-ALL/tournament-LCK%20Summer%202024/"
 }
+
 
 for team_name, url in urls.items():
     
