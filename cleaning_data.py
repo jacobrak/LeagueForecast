@@ -1,10 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import os
 
-
-def scrape1(url)-> pd.DataFrame:
+def scrape1(url: str)-> pd.DataFrame:
     try:
         response = requests.get(url)
         response.raise_for_status()  
@@ -50,7 +48,7 @@ def scrape1(url)-> pd.DataFrame:
 
 
 
-def scrape2(url) -> pd.DataFrame:
+def scrape2(url: str) -> pd.DataFrame:
     headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
     try:
