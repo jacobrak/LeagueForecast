@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import re
 import os
 import pandas as pd
-from cleaning_data import save_dataframe_to_csv
+from functions import save_dataframe_to_csv
 
 def extract_champions_and_elements(url:str) -> pd.DataFrame:
     chrome_options = Options()

@@ -126,15 +126,6 @@ def scrape2(url: str) -> pd.DataFrame:
 
 #Summer_T1 = scrape3("https://gol.gg/user/login/","https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/")
 
-from pathlib import Path
-def save_dataframe_to_csv(df: pd.DataFrame, filename: str) -> None:
-    output_path = Path("data") / filename
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    df.to_csv(output_path, index=False)
-    print(f"DataFrame saved to {output_path}")
-
 #save_dataframe_to_csv(Summer_match, 'Summer_match.csv')
 #save_dataframe_to_csv(Summer_championlist, 'Summer_championlist.csv')
 
