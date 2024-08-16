@@ -1,0 +1,6 @@
+Champion_a,Overall Ban Rate (%),Champion_b,Blueside Ban Rate (%),Champion_c,Redside Ban Rate (%),Champion_d,Overall Ban Rate Against (%),Champion_e,Blueside Ban Rate Against (%),Champion_f,Redside Ban Rate Against (%)
+Ashe,0.4,Kalista,0.29,Corki,0.17,Tristana,0.12,Leona,0.43,Senna,0.29
+Rumble,0.38,Ashe,0.33,Maokai,0.12,Sejuani,0.12,Senna,0.4,Kalista,0.29
+Sejuani,0.36,Sejuani,0.24,Rumble,0.33,KSante,0.07,Ivern,0.36,Leona,0.21
+Corki,0.33,Kalista,0.21,Senna,0.17,Kalista,0.52,Ashe,0.31,Ivern,0.21
+Tristana,0.31,Tristana,0.19,Corki,0.17,Rumble,0.43,Rumble,0.38,Nautilus,0.12
