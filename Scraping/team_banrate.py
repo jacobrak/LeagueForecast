@@ -64,6 +64,34 @@ def extract_champions_and_elements(url:str) -> pd.DataFrame:
 
 
     return df
+def extract_teamdata(url:str) -> pd.DataFrame:
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--log-level=3")
+    user_data_dir = os.path.join(os.getcwd(), "chrome_user_data")
+    chrome_options.add_argument(f"user-data-dir={user_data_dir}")
+
+    service = Service(executable_path="chromedriver.exe")
+    driver = webdriver.Chrome(service=service, options=chrome_options)
+    champions = []
+    content = ""
+    try:
+        driver.get(url)
+        container = WebDriverWait(driver, 2).until(
+    EC.presence_of_element_located((By.CSS_SELECTOR, "td.footable-visible.footable-last-column"))
+    )
+        anchor_elements = container.find_elements(By.TAG_NAME, "a")
+        champions = [element.get_attribute("title") for element in anchor_elements if element.get_attribute("title")]
+
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+    finally:
+        driver.quit()
+
+
+
 
 urls = {
     'T1': "https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/",
