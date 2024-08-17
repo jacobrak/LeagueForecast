@@ -75,15 +75,16 @@ def extract_teamdata(url:str) -> pd.DataFrame:
     driver = webdriver.Chrome(service=service, options=chrome_options)
     champions = []
     name = []
+    times = []
     try:
         driver.get(url)
         containers = WebDriverWait(driver, 2).until(
     EC.presence_of_all_elements_located((By.CSS_SELECTOR, "td.footable-visible.footable-last-column"))
     )
         
-        
+
         for container in containers:
-            if len(champions) <= 10:
+            if len(champions) >= 10:
                 break
             anchor_elements = container.find_elements(By.TAG_NAME, "a")
             br_elements = container.find_elements(By.CLASS_NAME, "text-center")
@@ -93,8 +94,9 @@ def extract_teamdata(url:str) -> pd.DataFrame:
                 br = [brs.text for brs in br_elements if brs.text]
 
                 
-                champions.append({"titles": titles, "texts": br})
-
+                champions.append(titles)
+                times.append(br)
+                #times.append()
         
             else:
                 champions.append({"titles": [], "texts": []})
@@ -117,7 +119,8 @@ def extract_teamdata(url:str) -> pd.DataFrame:
 
     finally:
         driver.quit()
-    print(name)
+
+    print(champions)
 
 
 
