@@ -1,9 +1,29 @@
 Team A,Team B,Score A,Score B
-Nongshim RedForce,Kwangdong Freecs,,
-KT Rolster,OK BRION,,
-FearX,DRX,,
-T1,Gen.G eSports,,
-Dplus KIA,Kwangdong Freecs,1.0,1.0
+Hanwha Life eSports,Gen.G eSports,,
+Nongshim RedForce,OK BRION,,
+T1,FearX,,
+Dplus KIA,KT Rolster,2.0,0.0
+Gen.G eSports,Nongshim RedForce,2.0,0.0
+DRX,Kwangdong Freecs,2.0,1.0
+OK BRION,Dplus KIA,0.0,2.0
+Hanwha Life eSports,FearX,2.0,0.0
+Kwangdong Freecs,T1,1.0,2.0
+KT Rolster,DRX,2.0,0.0
+OK BRION,T1,0.0,2.0
+Nongshim RedForce,Dplus KIA,1.0,2.0
+Hanwha Life eSports,DRX,2.0,0.0
+FearX,Kwangdong Freecs,2.0,1.0
+T1,Nongshim RedForce,0.0,2.0
+Gen.G eSports,KT Rolster,1.0,2.0
+Dplus KIA,FearX,2.0,1.0
+Hanwha Life eSports,OK BRION,2.0,0.0
+Kwangdong Freecs,KT Rolster,2.0,0.0
+DRX,Gen.G eSports,0.0,2.0
+Kwangdong Freecs,Nongshim RedForce,2.0,0.0
+OK BRION,KT Rolster,2.0,0.0
+FearX,DRX,2.0,0.0
+T1,Gen.G eSports,0.0,2.0
+Dplus KIA,Kwangdong Freecs,2.0,1.0
 Nongshim RedForce,Hanwha Life eSports,0.0,2.0
 FearX,Gen.G eSports,0.0,2.0
 DRX,OK BRION,2.0,0.0

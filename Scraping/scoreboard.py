@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-
+from functions import save_dataframe_to_csv
 def scrape1(url: str)-> pd.DataFrame:
     try:
         response = requests.get(url)
@@ -120,27 +120,13 @@ def scrape2(url: str) -> pd.DataFrame:
     return df
 
     
-#Summer_match = scrape1("https://gol.gg/tournament/tournament-matchlist/LCK%20Summer%202024/")
+Summer_match = scrape1("https://gol.gg/tournament/tournament-matchlist/LCK%20Summer%202024/")
 
-#Summer_championlist = scrape2("https://gol.gg/champion/list/season-S14/split-ALL/tournament-LCK%20Summer%202024/")
+Summer_championlist = scrape2("https://gol.gg/champion/list/season-S14/split-ALL/tournament-LCK%20Summer%202024/")
 
-#Summer_T1 = scrape3("https://gol.gg/user/login/","https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/")
 
-#save_dataframe_to_csv(Summer_match, 'Summer_match.csv')
-#save_dataframe_to_csv(Summer_championlist, 'Summer_championlist.csv')
+save_dataframe_to_csv(Summer_match, 'Summer_match.csv')
+save_dataframe_to_csv(Summer_championlist, 'Summer_championlist.csv')
 
     
 
-""""  
-Summer_T1 = scrape4("https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_Dplus_KIA = scrape4("https://gol.gg/teams/team-stats/2118/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_DRX = scrape4("https://gol.gg/teams/team-stats/2119/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_FearX = scrape4("https://gol.gg/teams/team-stats/2124/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_Gen_G_eSports = scrape4("https://gol.gg/teams/team-stats/2145/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_Hanwha_Life_eSports = scrape4("https://gol.gg/teams/team-stats/2122/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_KT_Rolster = scrape4("https://gol.gg/teams/team-stats/2123/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_Kwangdong_Freecs= scrape4("https://gol.gg/teams/team-stats/2117/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_Nongshim_RedForce = scrape4("https://gol.gg/teams/team-stats/2125/split-ALL/tournament-LCK%20Summer%202024/")
-Summer_OK_BRION = scrape4("https://gol.gg/teams/team-stats/2120/split-ALL/tournament-LCK%20Summer%202024/")
-
-"""
