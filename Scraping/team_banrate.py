@@ -100,7 +100,7 @@ def extract_teamdata(url:str) -> pd.DataFrame:
         
             else:
                 champions.append({"titles": [], "texts": []})
-        table_body = WebDriverWait(driver, 2).until(
+        table_body = WebDriverWait(driver, 4).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "body > div > main > div:nth-child(7) > div > div.row.rowbreak.fond-main-cadre > div > div.row.rowbreak.pb-4 > div > table > tbody"))
         )
         
@@ -164,3 +164,4 @@ for team_name, url in urls.items():
 """
 
 
+print(extract_teamdata("https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/"))
