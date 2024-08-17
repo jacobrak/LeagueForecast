@@ -99,20 +99,28 @@ def extract_teamdata(url:str) -> pd.DataFrame:
                 
         
             else:
-                champions.append({"titles": [], "texts": []})
+                continue
         table_body = WebDriverWait(driver, 4).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "body > div > main > div:nth-child(7) > div > div.row.rowbreak.fond-main-cadre > div > div.row.rowbreak.pb-4 > div > table > tbody"))
         )
+        try:
+            for i in range(1, 6):
+                row_selector = f"tr:nth-child({i})"
+                row = table_body.find_element(By.CSS_SELECTOR, row_selector)
         
-        for i in range(1, 6):
-            row_selector = f"tr:nth-child({i})"
-            row = table_body.find_element(By.CSS_SELECTOR, row_selector)
-    
-    
-            cell = row.find_element(By.CSS_SELECTOR, "td:nth-child(2)")
-            anchor = cell.find_element(By.CSS_SELECTOR, "a")
-            name.append(anchor.get_attribute("title")[:-6])
-
+        
+                cell = row.find_element(By.CSS_SELECTOR, "td:nth-child(2)")
+                anchor = cell.find_element(By.CSS_SELECTOR, "a")
+                name.append(anchor.get_attribute("title")[:-6])
+        except Exception as e:
+            for i in range(2, 7):
+                row_selector = f"tr:nth-child({i})"
+                row = table_body.find_element(By.CSS_SELECTOR, row_selector)
+        
+        
+                cell = row.find_element(By.CSS_SELECTOR, "td:nth-child(2)")
+                anchor = cell.find_element(By.CSS_SELECTOR, "a")
+                name.append(anchor.get_attribute("title")[:-6])
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -152,16 +160,11 @@ urls = {
     'OK_BRION': "https://gol.gg/teams/team-stats/2120/split-ALL/tournament-LCK%20Summer%202024/"
 }
 
-""""
+
 for team_name, url in urls.items():
     
-    dataframe = extract_champions_and_elements(url)
+    dataframe = extract_teamdata(url)
     
-    filename = f"Summer_{team_name}.csv"
+    filename = f"Summer_{team_name}2.csv"
     save_dataframe_to_csv(dataframe, filename)
     print(f"Saved {team_name} data to {filename}")
-
-"""
-
-
-print(extract_teamdata("https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/"))
