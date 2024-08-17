@@ -96,7 +96,7 @@ def extract_teamdata(url:str) -> pd.DataFrame:
                 
                 champions.append(titles)
                 times.append(br)
-                #times.append()
+                
         
             else:
                 champions.append({"titles": [], "texts": []})
@@ -119,9 +119,24 @@ def extract_teamdata(url:str) -> pd.DataFrame:
 
     finally:
         driver.quit()
+    
+    flat_names = []
+    flat_champions = []
+    flat_times = []
+    for i in range(len(name)):
+        for champ, time in zip(champions[i], times[i]):
+            flat_names.append(name[i])
+            flat_champions.append(champ)
+            flat_times.append(time)
 
-    print(champions)
+    df = pd.DataFrame({
+        "Player":flat_names,
+        "Champion":flat_champions,
+        "Times played":flat_times
+    
+    })
 
+    return df
 
 
 urls = {
@@ -147,4 +162,5 @@ for team_name, url in urls.items():
     print(f"Saved {team_name} data to {filename}")
 
 """
-extract_teamdata("https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/")
+
+
