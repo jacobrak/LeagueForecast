@@ -74,14 +74,42 @@ def extract_teamdata(url:str) -> pd.DataFrame:
     service = Service(executable_path="chromedriver.exe")
     driver = webdriver.Chrome(service=service, options=chrome_options)
     champions = []
-    content = ""
+    name = []
     try:
         driver.get(url)
-        container = WebDriverWait(driver, 2).until(
-    EC.presence_of_element_located((By.CSS_SELECTOR, "td.footable-visible.footable-last-column"))
+        containers = WebDriverWait(driver, 2).until(
+    EC.presence_of_all_elements_located((By.CSS_SELECTOR, "td.footable-visible.footable-last-column"))
     )
-        anchor_elements = container.find_elements(By.TAG_NAME, "a")
-        champions = [element.get_attribute("title") for element in anchor_elements if element.get_attribute("title")]
+        
+        
+        for container in containers:
+            if len(champions) <= 10:
+                break
+            anchor_elements = container.find_elements(By.TAG_NAME, "a")
+            br_elements = container.find_elements(By.CLASS_NAME, "text-center")
+            
+            if anchor_elements:
+                titles = [element.get_attribute("title")[:-6] for element in anchor_elements if element.get_attribute("title")]
+                br = [brs.text for brs in br_elements if brs.text]
+
+                
+                champions.append({"titles": titles, "texts": br})
+
+        
+            else:
+                champions.append({"titles": [], "texts": []})
+        table_body = WebDriverWait(driver, 2).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "body > div > main > div:nth-child(7) > div > div.row.rowbreak.fond-main-cadre > div > div.row.rowbreak.pb-4 > div > table > tbody"))
+        )
+        
+        for i in range(1, 6):
+            row_selector = f"tr:nth-child({i})"
+            row = table_body.find_element(By.CSS_SELECTOR, row_selector)
+    
+    
+            cell = row.find_element(By.CSS_SELECTOR, "td:nth-child(2)")
+            anchor = cell.find_element(By.CSS_SELECTOR, "a")
+            name.append(anchor.get_attribute("title")[:-6])
 
 
     except Exception as e:
@@ -89,7 +117,7 @@ def extract_teamdata(url:str) -> pd.DataFrame:
 
     finally:
         driver.quit()
-
+    print(name)
 
 
 
@@ -106,7 +134,7 @@ urls = {
     'OK_BRION': "https://gol.gg/teams/team-stats/2120/split-ALL/tournament-LCK%20Summer%202024/"
 }
 
-
+""""
 for team_name, url in urls.items():
     
     dataframe = extract_champions_and_elements(url)
@@ -115,3 +143,5 @@ for team_name, url in urls.items():
     save_dataframe_to_csv(dataframe, filename)
     print(f"Saved {team_name} data to {filename}")
 
+"""
+extract_teamdata("https://gol.gg/teams/team-stats/2144/split-ALL/tournament-LCK%20Summer%202024/")
